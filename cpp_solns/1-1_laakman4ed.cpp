@@ -18,7 +18,7 @@ bool checkUnique_map( std::string myString )
   bool result = true ;
 
   // map of characters in the given string
-  // key = string of character
+  // key = character from string
   // val = number of times character appeared in input string
   std::map< char, int > myMap ;
 
