@@ -1,2 +1,2 @@
 # KodeRev
-A repo for preserving solutions to coding interview problems.
+A repo for preserving my solutions to coding interview problems. All question statements possess appropriate citations. All solutions are my own unless otherwise stated.
