@@ -1,3 +1,9 @@
+/***************************************************************************
+* Problem Source: Cracking the Coding Interview 4th edition by Gayle Laakman
+* Prompt:
+*   1.1 Implement an algorithm to determine if a string has all unique characters. What if you cannot use additional data structures?
+***************************************************************************/
+
 public class Laakman4ed_11
 {
   // O(n) in number of characters
