@@ -1,7 +1,6 @@
 /**
 *   Problem Source: Cracking the Coding Interview 4th edition by Gayle Laakman
-*   Prompt:
-*     1.1 Implement an algorithm to determine if a string has all unique characters. What if you cannot use additional data structures?
+*   Check if the given string contains only unique characters.
 */
 
 #include <iostream>
@@ -44,31 +43,28 @@ bool checkUnique_sorting( std::string myString )
   bool result = true ;
 
   // bubble sort
-  bool flag = true ;
-  while( flag )
+  bool checkAgain = true ;
+  while( checkAgain )
   {
-    flag = false ;
-    unsigned int max = myString.size() ;
+    checkAgain = false ;
+    int max = myString.size() ;
     for( unsigned int i = 0 ; i < max ; i++ )
     {
-      if( myString[i] != '\0' && myString[i+1] != '\0' )
+      // ordered chars ok
+      if( myString[ i ] < myString[ i+1 ] )
       {
-        if( myString[ i ] < myString[ i+1 ] )
-        {
-          continue ;
-        }
-        else if( myString[ i+1 ] < myString[ i ] )
-        {
-          char temp       = myString[ i ] ;
-          myString[ i ]   = myString[ i+1 ] ;
-          myString[ i+1 ] = temp ;
-          flag            = true ;
-          max             = max - 1 ;
-        }
-        else 
-          break ;
+        continue ;
       }
-    } 
+      // out of order chars
+      else if( myString[ i+1 ] < myString[ i ] )
+      {
+        char temp       = myString[ i ] ;
+        myString[ i ]   = myString[ i+1 ] ;
+        myString[ i+1 ] = temp ;
+        checkAgain      = true ; // made a swap, check again
+        max             = max - 1 ;
+      }
+    }
   }
 
   std::cout << "Sorted input string               :  " << myString << std::endl ;

@@ -1,7 +1,6 @@
 /**
 *   Problem Source: Cracking the Coding Interview 4th edition by Gayle Laakman
-*   Prompt:
-*     1.2 Write code to reverse a c-style string.
+*   Reverse a given c-string.
 */
 
 #include <stdio.h>
